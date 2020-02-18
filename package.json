@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --open --hot"
+    "start": "webpack-dev-server --mode development --open --hot",
+    "rimraf": "node ./node_modules/rimraf/bin.js",
+    "build:clean": "rimraf dist",
+    "build": "npm run build:clean && (webpack -p --config webpack.config.js --color --progress --hide-modules)"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +20,7 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.1.10",
+    "rimraf": "^3.0.2"
   }
 }
